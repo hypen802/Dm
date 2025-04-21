@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculate the mean and standard deviation</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import numpy as np
+# Sample dataset
+data = [10, 12, 23, 23, 16, 23, 21, 16]
+# Calculate mean
+mean = np.mean(data)
+# Calculate standard deviation (sample)
+std_dev = np.std(data, ddof=1) # Use ddof=1 for sample standard deviation
+print("Mean:", mean)
+print("Standard Deviation:", std_dev)
+
+Output:
+Mean: 18.0
+Standard Deviation: 5.237229365663817
+
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

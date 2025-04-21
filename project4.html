@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculate total sales by month</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import pandas as pd
+def calculate_sales_by_month(df, date_column, sales_column):
+    """Calculates total sales by month from a DataFrame."""
+    df[date_column] = pd.to_datetime(df[date_column])
+    df['month'] = df[date_column].dt.to_period('M') # Extract year-month
+    monthly_sales = df.groupby('month')[sales_column].sum()
+    return monthly_sales
+
+# Example usage:
+# Assuming 'date' column and 'sales' column exist
+df = pd.read_csv('data2.csv')
+monthly_sales = calculate_sales_by_month(df, 'date', 'sales')
+print(monthly_sales)
+
+
+
+output:
+month
+2000-01    25
+2001-02    30
+2002-03    35
+2003-04    25
+2004-05    23
+Freq: M, Name: sales, dtype: int64
+
+        
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

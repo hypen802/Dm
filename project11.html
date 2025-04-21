@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 11</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Use of degrees distribution of network</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import networkx as nx
+import matplotlib.pyplot as plt
+
+def degree_distribution(graph):
+    """Calculates and visualizes the degree distribution of a network."""
+    degrees = [graph.degree(node) for node in graph.nodes()]
+    plt.hist(degrees, bins=range(max(degrees) + 2), align='left')
+    plt.xlabel("Degree")
+    plt.ylabel("Frequency")
+    plt.title("Degree Distribution")
+    plt.show()
+
+# Example usage:
+G = nx.karate_club_graph() # Example graph
+degree_distribution(G)
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

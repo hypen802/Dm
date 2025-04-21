@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 9</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Visualize the result of clustering and compare</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+def visualize_clusters(df, feature1, feature2, cluster_col):
+    """Visualizes the clusters from K-means."""
+    plt.scatter(df[feature1], df[feature2], c=df[cluster_col], cmap='viridis')
+    plt.xlabel(feature1)
+    plt.ylabel(feature2)
+    plt.title("K-means Clustering Visualization")
+    plt.show()
+# Example usage:
+# Create a sample DataFrame for demonstration
+data = {
+    'Feature1': np.random.rand(100),
+    'Feature2': np.random.rand(100),
+    'Cluster': np.random.randint(0, 3, 100)  # Example cluster assignments
+}
+df = pd.DataFrame(data)
+if df is not None:
+    visualize_clusters(df, 'Feature1', 'Feature2', 'Cluster')
+#Example with specific data
+data2 = {
+    'Feature1': [1, 2, 5, 6, 8, 9, 1, 3, 7, 9],
+    'Feature2': [2, 3, 6, 7, 9, 10, 1, 4, 8, 10],
+    'Cluster': [0, 0, 1, 1, 2, 2, 0, 0, 2, 2]
+}
+df2 = pd.DataFrame(data2)
+if df2 is not None:
+    visualize_clusters(df2, 'Feature1', 'Feature2', 'Cluster')
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

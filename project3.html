@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Perform data filtering and calculate aggregate statistics</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import pandas as pd
+def filter_and_aggregate(df, filter_column, filter_value, aggregate_column):
+
+    """Filters a DataFrame and calculates aggregate statistics."""
+
+    filtered_df = df[df[filter_column] == filter_value]
+    mean = filtered_df[aggregate_column].mean()
+    median = filtered_df[aggregate_column].median()
+    return mean, median
+
+# Example usage:
+# Assuming 'category' column exists and you want to filter for 'A'
+# Assuming 'sales' column exists and you want to calculate mean and median
+df = pd.read_csv('d2.csv') 
+mean, median = filter_and_aggregate(df, 'category', 'A', 'sales')
+print(f"Mean sales for category A: {mean}, Median sales for category A: {median}")
+
+# output:-
+# Mean sales for category A: 25.0, Median sales for category A: 25.0
+
+# CSV file
+import pandas as pd
+# Create sample data
+d2 = {
+        "category": ["A", "B", "C","R","K"],
+        "sales": [25, 30, 35,25,23]
+    }
+# Convert to DataFrame
+df = pd.DataFrame(d2)
+# Save to CSV file
+df.to_csv("d2.csv", index=False)
+print("CSV file created successfully!")
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

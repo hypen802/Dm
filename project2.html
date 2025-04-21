@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Read the CSV file</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import pandas as pd
+# Read CSV file
+df = pd.read_csv("sample.csv")  # Replace "filename.csv" with your actual file
+
+# Display first few rows
+print(df.head())
+
+
+import pandas as pd
+# Create sample data
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [25, 30, 35],
+    "City": ["New York", "Los Angeles", "Chicago"]
+}
+# Convert to DataFrame
+df = pd.DataFrame(data)
+# Save to CSV file
+df.to_csv("sample.csv", index=False)
+print("CSV file created successfully!")
+
+
+
+Output:-
+CSV file created successfully!
+
+    Name       Age         City
+0    Alice     25     New York
+1      Bob     30  Los Angeles
+2  Charlie     35      Chicago
+
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>

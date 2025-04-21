@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Classification using Randon Forest.</h1>
+        <a href="index.html">Back to Homepage</a>
+    </header>
+    <main>
+        <section>
+            <h2>Code:</h2>
+            <pre>
+<code>
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+def random_forest_classification(df, features, target):
+    """Trains and evaluates a Random Forest classifier."""
+    X = df[features]
+    y = df[target]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    return accuracy
+
+# Example usage:
+#Example Data creation.
+data = {'Feature1': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        'Feature2': [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+        'Target': [0, 0, 0, 1, 1, 1, 0, 0, 1, 1]}
+
+df = pd.DataFrame(data)
+if df is not None:
+    accuracy = random_forest_classification(df, ['Feature1', 'Feature2'], 'Target') # Replace with your features and target
+    print(f"Accuracy: {accuracy}")
+
+</code>
+            </pre>
+        </section>
+        <section>
+            
+        </section>
+    </main>
+    
+</body>
+</html>
